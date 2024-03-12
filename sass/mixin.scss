@@ -1,0 +1,15 @@
+
+
+
+@mixin base-shadow{
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+@mixin header-shadow{
+    box-shadow: 0px 2px 4px 0px #00000026;
+
+}
+
+@mixin btn-clic{
+    transform: scale(1.02);
+}

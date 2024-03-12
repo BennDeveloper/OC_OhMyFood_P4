@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+ 
+
+
+//      Variables Colors
+
+$--primary: #9356dc;
+$--secondary: #ff79da;
+$--primary-background: #F6F6F6;
+$--secondary-background: #ffffff;
+$--icone :  #353535;
+
+
+
+$--dimgray: #696969;
+$--lightgray: lightgray;
+$--ultralightgray: #EAEAEA;
+$--graywhite: #F6F6F6;
+$--lightpurple: #F5EDFF;
+$--lightgreen: #99E2D0;
+$--green: #2FAF94;
+$--grayblack: #353535;
+
+
+
+*{
+   
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "roboto"; 
+    //background-color:$--background;
+}
