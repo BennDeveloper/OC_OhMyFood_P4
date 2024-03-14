@@ -6,10 +6,14 @@
 }
 
 @mixin header-shadow{
-    box-shadow: 0px 2px 4px 0px #00000026;
+    box-shadow: 0px 2px 4px 0px #00000042;
 
 }
 
-@mixin btn-clic{
-    transform: scale(1.02);
-}
+@mixin zoom-effect{ 
+        cursor: pointer;
+        max-width: 1500px;
+        &:hover {
+        transform: scale(2.0); 
+        }
+    }

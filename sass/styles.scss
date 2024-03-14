@@ -4,30 +4,35 @@
 
 
 header{
+    
     display: flex;
     justify-content: center;
-    @include header-shadow;
-    position: relative;
-   
-    
+    background-color: $--secondary-background;
     img{ 
        width: 190px;
         padding: 20px;
     }
 }
 
-
-main{   
-    div{
+main{  
+     
+    .city{
+        position: relative;
         color: #353535;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 17px;
-        background-color:#EAEAEA ;
-        @include base-shadow;
-
+        background-color:#EAEAEA;
         height: 50px;
+        @include base-shadow;
+        input{
+            padding-left: 20px;
+            font-family: "roboto";
+            font-size: large;
+            border: none;
+            font-weight: bold;
+            background-color: #EAEAEA;     
+        }
     }
 
     h1, p{
@@ -58,11 +63,11 @@ main{
             padding: 15px 25px;
             background: linear-gradient(0deg,$--primary 0%,$--secondary 100%);
             @include base-shadow;   
+            @include zoom-effect;
         } 
     }
 
     .filtres{
-        
         background-color:$--secondary-background;
         padding-bottom: 35px;
 
@@ -86,6 +91,7 @@ main{
                 border-radius: 15px;
                 background-color: $--primary-background;
                 @include base-shadow ;
+                @include zoom-effect;
             }
             i{
                 color: $--icone;
@@ -95,7 +101,7 @@ main{
             span{
                             
                 position: relative;
-                left: -15px;
+                left: -25px;
                 margin-left: 0%;
                 padding:6px 10px;
                 border-radius: 20px;
@@ -105,7 +111,7 @@ main{
         }
         @media screen and (min-width: 1073px) {
             h2{
-                margin: 0px;
+                margin: 40px 0px 30px 0px;
                 padding: 0px 100px 0px 100px;
                 align-items: center;
             }
@@ -116,21 +122,99 @@ main{
               padding: 0px 100px 0px 100px;
             }
             li{
-                
                 display: list-item;
                 width: 35%;
+               
             }
 
             .filtres{
                 margin: 0px 100px 0px 100px;
-               
-            }
 
-            
+            }
         }
 
-}
+    }
+     .menus{
+        background-color: $--primary-background;
+        padding-top: 20px;
+        }
+        h2{
+            margin:30px 60px 30px 60px;
+        }
+        .card{
+            border-radius: 15px 15px 15px 15px;
+            margin: 30px;
+            flex-direction: column;
+            background-color: $--secondary-background;
+            @include zoom-effect;
+            
+            span{
+                border-radius: 3px;
+                color: #008766;
+                right: 40px;
+                margin: 15px;
+                padding: 8px;
+                position: absolute;
+                background: #99E2D0;
+            }
+    
+            img{
+               
+                border-radius: 15px 15px 0px 0px;
+                width: 100%;
+                object-fit: cover;
+                min-height: 200px;
+                max-height: 200px;
+            }
+            .description {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content:space-between ;
+                border-radius: 0px 0px 15px 15px;
+                padding:10px 10px 0px 10px ;    
+            }
+            
+            a {
+                text-decoration:none;
+                color: black;
+                h3{
+                    margin-bottom: 5px;
+                }
+                .fa-regular {
+                    position: relative;
+                    align-items: end;
+                    font-size: 25px;
+                    padding-top: 10px;
+                    padding-right: 15px;
+                }
+            }
+            
+        }
+        
+    }
+
+    footer{
+        background-color: $--footer-background;
+        .footer-box{
+            padding: 15px;
+            justify-content:space-between ;
+            
+        }
+        img{
+            height: 20px;
+        }
+        p{
+            color: #ffffff;
+            .fa-solid{
+                font-size: 10px;
+                margin-right: 10px;
+            }
+            .fa-solid.fa-utensils{
+                margin-right: 15px;
+            }
+        }
+    }
 
 
+    
 
-}
