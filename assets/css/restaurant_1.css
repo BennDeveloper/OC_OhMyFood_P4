@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Shrikhand&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "roboto";
+  background-color: #F6F6F6;
+}
+
+.fa-regular {
+  position: relative;
+  align-items: end;
+  font-size: 25px;
+  padding-top: 10px;
+  padding-right: 15px;
+}
+
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 0px 0px 15px 15px;
+  padding: 10px 10px 0px 10px;
+}
+
+header {
+  display: flex;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2588235294);
+}
+header .left-lien {
+  font-size: x-large;
+  color: #353535;
+  display: flex;
+  justify-content: center;
+  flex-basis: 2rem;
+  margin-left: 1rem;
+  align-items: center;
+}
+header .logo-header {
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+}
+header .logo-header img {
+  width: 190px;
+  height: 100;
+  padding: 20px;
+}
+
+main img {
+  display: block;
+  -o-object-position: 50% 60%;
+     object-position: 50% 60%;
+  width: 100%;
+  height: 275px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .titre-menu {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  background-color: #F6F6F6;
+  position: relative;
+  padding: 30px 15px 15px 15px;
+  border-radius: 35px 35px 0 0;
+  margin-top: -30px;
+}
+main .titre-menu h1 {
+  font-family: "shrikhand", "sans-serif";
+  font-size: 25px;
+}
+main .heart-icone {
+  align-items: center;
+  justify-content: center;
+}
+main .la_carte {
+  background-color: #F6F6F6;
+  top: 200px;
+}
+main .la_carte .formule {
+  padding: 15px;
+  justify-content: space-between;
+}
+main .la_carte .Short_titles {
+  font-size: larger;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: solid #99E2D0 4px;
+  width: 40px;
+}
+main .la_carte .plat {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2588235294);
+}
+main .la_carte .plat .prix {
+  margin-top: 23px;
+  font-size: 15px;
+}
+main .la_carte .plath1 {
+  padding-top: 30px;
+  font-family: "shrikhand";
+}
+main .la_carte .platp {
+  font-size: larger;
+}
+main .btn_div {
+  text-align: center;
+}
+main .btn_div .btn {
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin: 15px 0px 35px 0px;
+  border-radius: 25px;
+  padding: 15px 40px;
+  background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+main .btn_div .btn:hover {
+  opacity: 0.9;
+}
+
+footer {
+  background-color: #353535;
+}
+footer .footer-box {
+  padding: 25px;
+  justify-content: space-between;
+}
+footer img {
+  padding-bottom: 15px;
+  height: 40px;
+}
+footer p {
+  padding-bottom: 10px;
+  color: #ffffff;
+}
+footer p .fa-solid {
+  font-size: 10px;
+  margin-right: 10px;
+}
+footer p .fa-solid.fa-utensils {
+  margin-right: 15px;
+}/*# sourceMappingURL=restaurant_1.css.map */

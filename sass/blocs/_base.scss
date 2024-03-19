@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
- 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Shrikhand&display=swap');
 
 
 //      Variables Colors
@@ -10,19 +10,7 @@ $--primary-background: #F6F6F6;
 $--secondary-background: #ffffff;
 $--footer-background: #353535;
 $--icone :  #353535;
-
-
-
-
-
-$--lightgray: lightgray;
-$--ultralightgray: #EAEAEA;
-$--graywhite: #F6F6F6;
-$--lightpurple: #F5EDFF;
-$--lightgreen: #99E2D0;
-$--green: #2FAF94;
-$--grayblack: #353535;
-
+$--test: black;
 
 
 *{
@@ -36,4 +24,23 @@ body{
     
     font-family: "roboto"; 
     background-color:$--primary-background;
+}
+
+
+
+.fa-regular {
+    position: relative; 
+    align-items: end; 
+    font-size: 25px; 
+    padding-top: 10px; 
+    padding-right: 15px; 
+} 
+
+
+.description{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between ;
+    border-radius: 0px 0px 15px 15px;
+    padding:10px 10px 0px 10px
 }

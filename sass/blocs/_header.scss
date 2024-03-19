@@ -1,0 +1,30 @@
+
+
+
+
+@mixin header{
+footer{
+    background-color: $--footer-background;
+
+    .footer-box{
+
+        padding: 25px;
+        justify-content:space-between ;  
+    }
+    img{
+        padding-bottom: 15px;
+        height: 40px;
+    }
+    p{
+        padding-bottom: 10px;
+        color: #ffffff;
+        .fa-solid{
+            font-size: 10px;
+            margin-right: 10px;
+        }
+        .fa-solid.fa-utensils{
+            margin-right: 15px;
+        } 
+    }
+}
+}
