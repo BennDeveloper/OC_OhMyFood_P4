@@ -27,12 +27,26 @@ body {
   padding: 10px 10px 0px 10px;
 }
 
+@keyframes appear {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.loader {
+  background-color: red;
+  height: 100vh;
+}
+
 header {
   display: flex;
   background-color: #ffffff;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2588235294);
 }
 header .left-lien {
+  text-decoration: none;
   font-size: x-large;
   color: #353535;
   display: flex;
@@ -62,12 +76,9 @@ main img {
      object-fit: cover;
 }
 main .titre-menu {
-  display: flex;
-  justify-content: space-between;
-  justify-items: center;
   background-color: #F6F6F6;
   position: relative;
-  padding: 30px 15px 15px 15px;
+  padding: 30px 15px 15px 30px;
   border-radius: 35px 35px 0 0;
   margin-top: -30px;
 }
@@ -75,9 +86,23 @@ main .titre-menu h1 {
   font-family: "shrikhand", "sans-serif";
   font-size: 25px;
 }
-main .heart-icone {
-  align-items: center;
-  justify-content: center;
+main .titre-menu i {
+  position: absolute;
+  font-size: 30px;
+  right: 30px;
+  top: 60%;
+  transform: translateY(-60%);
+}
+main .titre-menu .fas {
+  color: transparent;
+  background-image: linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+main .titre-menu :hover.fas {
+  opacity: 1;
 }
 main .la_carte {
   background-color: #F6F6F6;
@@ -98,37 +123,90 @@ main .la_carte .plat {
   display: flex;
   justify-content: space-between;
   background-color: #ffffff;
-  padding: 10px;
   border-radius: 15px;
   margin-bottom: 10px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2588235294);
+  overflow: hidden;
+  animation: appear 1s;
+  animation-fill-mode: both;
 }
-main .la_carte .plat .prix {
-  margin-top: 23px;
-  font-size: 15px;
+main .la_carte .plat:nth-child(1) {
+  animation-delay: 100ms;
 }
-main .la_carte .plath1 {
+main .la_carte .plat:nth-child(2) {
+  animation-delay: 200ms;
+}
+main .la_carte .plat:nth-child(3) {
+  animation-delay: 300ms;
+}
+main .la_carte .plat:nth-child(4) {
+  animation-delay: 400ms;
+}
+main .la_carte .plat .description-plat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main .la_carte .plat .description-plat p,
+main .la_carte .plat .description-plat h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main .la_carte .plat .prix-check {
+  display: flex;
+  align-items: center;
+  margin-right: -48px;
+  transition: all 800ms;
+  cursor: default;
+}
+main .la_carte .plat .prix-check:hover {
+  margin-right: 0px;
+}
+main .la_carte .plat .prix-check .prix {
+  cursor: default;
+  margin: 10px 12px -13px;
+  font-size: 17px;
+}
+main .la_carte .plat .prix-check .check {
+  background-color: #99E2D0;
+  padding: 25px 15px 25px 15px;
+  border-radius: 0 15px 15px 0;
+}
+main .la_carte .plat .prix-check i {
+  color: #ffffff;
+}
+main .la_carteh1 {
   padding-top: 30px;
   font-family: "shrikhand";
 }
-main .la_carte .platp {
+main .la_cartep {
   font-size: larger;
 }
 main .btn_div {
   text-align: center;
 }
 main .btn_div .btn {
-  color: white;
-  font-weight: bold;
-  border: none;
   margin: 15px 0px 35px 0px;
   border-radius: 25px;
   padding: 15px 40px;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 25px;
   background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  transition-property: transform;
+  transition-duration: 90ms;
 }
 main .btn_div .btn:hover {
+  transform: scale(1.02);
   opacity: 0.9;
+  box-shadow: 0px 2px 4px 0px #ff79da;
 }
 
 footer {

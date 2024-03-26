@@ -14,6 +14,7 @@ header{
     @include header-shadow;
 
     .left-lien{
+        text-decoration: none;
         font-size: x-large;
         color: $--icone;
         display: flex;
@@ -51,14 +52,13 @@ main{
       height: 275px;
       object-fit: cover;
     }
+    
  
     .titre-menu{
-        display: flex;
-        justify-content: space-between;
-        justify-items: center;
+        
         background-color:$--primary-background;
         position: relative;
-        padding: 30px 15px 15px 15px;
+        padding: 30px 15px 15px 30px;
         border-radius: 35px 35px 0 0;
         margin-top: -30px;
 
@@ -66,46 +66,113 @@ main{
             font-family: "shrikhand", "sans-serif";
             font-size: 25px;
         }
-
-    }
-
-    .heart-icone{
-        align-items: center;
-        justify-content: center;
-    }
+        i{
+            position: absolute;
+            font-size: 30px;
+            right: 30px;
+            top :60%;
+            transform: translateY(-60%);
+        }
+        .fas{
+            color: transparent;
+            background-image: linear-gradient($--primary, $--secondary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            opacity: 0;
+            transition:all 200ms ease-in-out,
+        } 
+        :hover.fas{
+            opacity: 1;
+        }
         
-
+    }
     .la_carte{
         background-color: $--primary-background;
-        
         top:200px;
-
         .formule{
             padding: 15px;
             justify-content: space-between;
+
+         
+
+
+
         }
-       
         .Short_titles{
             font-size: larger;
             margin-bottom: 20px;
             padding-bottom: 5px;
-            border-bottom: solid #99E2D0 4px; 
-            width: 40px;           ;
-
+            border-bottom: solid $--check 4px; 
+            width: 40px;
         }
 
         .plat{
             display: flex;
             justify-content: space-between;
             background-color: $--secondary-background;
-            padding: 10px;
             border-radius: 15px;
             margin-bottom: 10px;
             @include header-shadow;
-            .prix{
-                margin-top: 23px;
-                font-size: 15px;
+            overflow: hidden;
+            animation: appear 1s;
+            animation-fill-mode: both;
+
+
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 100ms * $i;
+                  
+
+                }
+
             }
+            
+           
+
+            .description-plat{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 12px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                p,
+                h4{
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                
+             }
+            .prix-check{
+                display: flex;
+                align-items: center;
+                margin-right: -48px;
+                transition: all 800ms;
+                cursor: default;
+                &:hover {
+                    margin-right: 0px; 
+                }
+                .prix{
+                    cursor: default;
+                    margin : 10px 12px -13px;
+                    font-size: 17px;
+                }
+                .check{
+                  background-color: $--check;
+                  padding: 25px 15px 25px 15px;
+                  border-radius: 0 15px 15px 0;
+                 
+                }
+                i{
+                    color: $--secondary-background;
+                }
+    
+                }
+               
+            }
+            
             &h1{
             
                 padding-top: 30px;
@@ -117,30 +184,22 @@ main{
             }
   
         }
+        
 
-    }
+   
 
     .btn_div{
         text-align: center;
     .btn{
-        
-        color: white;        
-        font-weight: bold ;
-        border: none;
         margin: 15px 0px 35px 0px;
         border-radius: 25px ;
         padding: 15px 40px;
-        background: linear-gradient(0deg,$--primary 0%,$--secondary 100%);
-        @include base-shadow;  
-       
-        &:hover{
-            opacity: 0.9;    
-         }
-        }
-     
+        @include btn-trans;
        }
-}
+    }
+    
 
+}
 
 
 footer{
@@ -167,3 +226,4 @@ footer{
         } 
     }
 }
+

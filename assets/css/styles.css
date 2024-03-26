@@ -27,18 +27,73 @@ body {
   padding: 10px 10px 0px 10px;
 }
 
-header {
+@keyframes appear {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.loader {
+  background-color: red;
+  height: 100vh;
+}
+
+body .loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: disappear 200ms 3s forwards;
+  transform-origin: top;
+}
+body .loader .fa-solid:not(:last-child) {
+  margin-right: 20px;
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+body .loader .fa-solid {
+  color: transparent;
+  background-image: linear-gradient(to top, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+  animation: bounce 1.2s infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+body .loader .fa-solid:nth-child(2) {
+  animation-delay: 0.1s;
+}
+body .loader .fa-solid:nth-child(3) {
+  animation-delay: 0.2s;
+}
+body header {
   display: flex;
   justify-content: center;
   background-color: #ffffff;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2588235294);
 }
-header img {
+body header img {
   width: 190px;
   padding: 20px;
 }
-
-main .city {
+body main .city {
   position: relative;
   color: #353535;
   display: flex;
@@ -48,47 +103,51 @@ main .city {
   height: 50px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
 }
-main .city h3 {
+body main .city h3 {
   margin-left: 15px;
 }
-main h1, main p {
+body main h1, body main p {
   margin-bottom: 15px;
 }
-main p {
+body main p {
   color: #353535;
 }
-main .explorer {
+body main .explorer {
   padding: 35px 0px 35px 0px;
   padding-left: 40px;
   padding-right: 40px;
   text-align: center;
   background-color: #F6F6F6;
 }
-main .explorer p {
+body main .explorer p {
   color: #353535;
 }
-main .explorer .btn {
-  color: white;
-  font-weight: bold;
-  border: none;
+body main .explorer .btn {
   margin-top: 15px;
-  border-radius: 25px;
   padding: 15px 25px;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 25px;
   background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  transition-property: transform;
+  transition-duration: 90ms;
 }
-main .explorer .btn:hover {
+body main .explorer .btn:hover {
+  transform: scale(1.02);
   opacity: 0.9;
+  box-shadow: 0px 2px 4px 0px #ff79da;
 }
-main .filtres {
+body main .filtres {
   background-color: #ffffff;
   padding-bottom: 35px;
   padding-top: 15px;
 }
-main .filtres h2 {
+body main .filtres h2 {
   margin: 30px 60px 30px 60px;
 }
-main .filtres ul {
+body main .filtres ul {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,7 +155,7 @@ main .filtres ul {
   width: 100%;
   list-style-type: none;
 }
-main .filtres ul li {
+body main .filtres ul li {
   margin: 15px;
   width: 100%;
   margin-bottom: 25px;
@@ -106,12 +165,12 @@ main .filtres ul li {
   background-color: #F6F6F6;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
 }
-main .filtres ul i {
+body main .filtres ul i {
   position: relative;
   color: #353535;
   margin-right: 15px;
 }
-main .filtres ul span {
+body main .filtres ul span {
   position: relative;
   left: -25px;
   margin-left: 0%;
@@ -121,39 +180,39 @@ main .filtres ul span {
   color: #ffffff;
 }
 @media screen and (min-width: 1073px) {
-  main .filtres h2 {
+  body main .filtres h2 {
     margin: 40px 0px 30px 0px;
     padding: 0px 100px 0px 100px;
     align-items: center;
   }
-  main .filtres ul {
+  body main .filtres ul {
     display: flex;
     flex-direction: row;
     align-content: space-between;
     padding: 0px 100px 0px 100px;
   }
-  main .filtres li {
+  body main .filtres li {
     display: list-item;
     width: 35%;
   }
-  main .filtres .filtres {
+  body main .filtres .filtres {
     margin: 0px 100px 0px 100px;
   }
 }
-main .menus {
+body main .menus {
   background-color: #F6F6F6;
   padding-top: 20px;
 }
-main .menus h2 {
+body main .menus h2 {
   margin: 30px 60px 30px 60px;
 }
-main .menus .card {
+body main .menus .card {
   border-radius: 15px 15px 15px 15px;
   margin: 30px;
   flex-direction: column;
   background-color: #ffffff;
 }
-main .menus .card span {
+body main .menus .card span {
   border-radius: 3px;
   color: #008766;
   right: 40px;
@@ -162,7 +221,7 @@ main .menus .card span {
   position: absolute;
   background: #99E2D0;
 }
-main .menus .card img {
+body main .menus .card img {
   border-radius: 15px 15px 0px 0px;
   width: 100%;
   -o-object-position: 50% 60%;
@@ -172,43 +231,53 @@ main .menus .card img {
   min-height: 200px;
   max-height: 200px;
 }
-main .menus .card .description {
+body main .menus .card .description {
   position: relative;
 }
-main .menus .card a {
+body main .menus .card .description i {
+  font-size: 25px;
+  position: absolute;
+  right: 15px;
+  top: 30%;
+  transform: translateY(-30%);
+}
+body main .menus .card .description .fas {
+  color: transparent;
+  background-image: linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+body main .menus .card .description :hover.fas {
+  opacity: 1;
+}
+body main .menus .card a {
   text-decoration: none;
   color: black;
 }
-main .menus .card a h3 {
+body main .menus .card a h3 {
   margin-bottom: 5px;
 }
-main .menus .card a i {
-  position: absolute;
-  font-size: 25px;
-  top: 10px;
-  right: 15px;
-  transform: translateY(-50%);
-}
-
-footer {
+body footer {
   background-color: #353535;
 }
-footer .footer-box {
+body footer .footer-box {
   padding: 25px;
   justify-content: space-between;
 }
-footer img {
+body footer img {
   padding-bottom: 15px;
   height: 40px;
 }
-footer p {
+body footer p {
   padding-bottom: 10px;
   color: #ffffff;
 }
-footer p .fa-solid {
+body footer p .fa-solid {
   font-size: 10px;
   margin-right: 10px;
 }
-footer p .fa-solid.fa-utensils {
+body footer p .fa-solid.fa-utensils {
   margin-right: 15px;
 }/*# sourceMappingURL=styles.css.map */
